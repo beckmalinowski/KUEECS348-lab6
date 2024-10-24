@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+      <style>
+        p {
+          border-width: 5px;
+          border-style: solid;
+        }
+      </style>
+      <meta charset="utf8">
+    </head>
+    <body>
+      <p>paragraph to be altered.</p>
+      <label for="border-r">border r(0-255):</label> <input id="border-r"> <br>
+      <label for="border-g">border g(0-255):</label> <input id="border-g"> <br>
+      <label for="border-b">border b(0-255):</label> <input id="border-b"> <br>
+      <label for="border-width">border width:</label> <input id="border-width"> <br>
+      <label for="background-r">background r(0-255):</label> <input id="background-r"> <br>
+      <label for="background-g">background g(0-255):</label> <input id="background-g"> <br>
+      <label for="background-b">background b(0-255):</label> <input id="background-b"> <br>
+      <button type="button">change the color!</button>
+    </body>
+    <script>
+      const getInput = (id) => document.querySelector(`#${id}`).value;
+
+      const paragraph = document.querySelector("p");
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", () => {
+        let borderColor = {
+          r: getInput("border-r"),
+          g: getInput("border-g"),
+          b: getInput("border-b"),
+        };
+        let borderWidth = getInput("border-width");
+        let backgroundColor = {
+          r: getInput("background-r"),
+          g: getInput("background-g"),
+          b: getInput("background-b"),
+        };
+
+        paragraph.style.borderColor = `rgb(${borderColor.r}, ${borderColor.g}, ${borderColor.b})`;
+        paragraph.style.borderWidth = `${borderWidth}px`;
+        paragraph.style.backgroundColor = `rgb(${backgroundColor.r}, ${backgroundColor.g}, ${backgroundColor.b})`;
+      });
+    </script>
+</html>
