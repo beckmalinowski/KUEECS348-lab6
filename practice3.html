@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+      <style>
+      </style>
+      <title>practice three</title>
+      <meta charset="utf8">
+    </head>
+    <body>
+      <h1>eecs348 practice three</h1>
+      <label for="password-one">first password:</label> <input id="password-one"> <br>
+      <label for="password-two">second password:</label> <input id="password-two"> <br>
+      <button type="button">validate your passwords</button> <br>
+      <a href="index.html">
+        <button type="button">go back to index.html</button>
+      </a>
+    </body>
+    <script>
+      const getInput = (id) => document.querySelector(`#${id}`).value;
+
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", () => {
+        let passwords = {
+          first: getInput("password-one"),
+          second: getInput("password-two"),
+        };
+
+        if (passwords.first.length < 8) {
+          alert("your first password is less than eight characters.");
+        } else if (passwords.second.length < 8) {
+          alert("your second password is less than eight characters.");
+        } else if (passwords.first != passwords.second) {
+          alert("your passwords do not match.");
+        } else {
+          alert("your passwords match!");
+        }
+      });
+    </script>
+</html>

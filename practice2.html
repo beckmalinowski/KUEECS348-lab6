@@ -7,9 +7,11 @@
           border-style: solid;
         }
       </style>
+      <title>practice two</title>
       <meta charset="utf8">
     </head>
     <body>
+      <h1>eecs348 practice two</h1>
       <p>paragraph to be altered.</p>
       <label for="border-r">border r(0-255):</label> <input id="border-r"> <br>
       <label for="border-g">border g(0-255):</label> <input id="border-g"> <br>
@@ -18,7 +20,10 @@
       <label for="background-r">background r(0-255):</label> <input id="background-r"> <br>
       <label for="background-g">background g(0-255):</label> <input id="background-g"> <br>
       <label for="background-b">background b(0-255):</label> <input id="background-b"> <br>
-      <button type="button">change the color!</button>
+      <button type="button">change the color!</button> <br>
+      <a href="index.html">
+        <button type="button">go back to index.html</button>
+      </a>
     </body>
     <script>
       const getInput = (id) => document.querySelector(`#${id}`).value;
