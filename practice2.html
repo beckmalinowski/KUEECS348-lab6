@@ -1,13 +1,8 @@
 <!doctype html>
 <html>
     <head>
-      <style>
-        p {
-          border-width: 5px;
-          border-style: solid;
-        }
-      </style>
       <title>practice two</title>
+      <link rel="stylesheet" href="style2.css">
       <meta charset="utf8">
     </head>
     <body>
@@ -24,29 +19,7 @@
       <a href="index.html">
         <button type="button">go back to index.html</button>
       </a>
+
+      <script src="script2.js"></script>
     </body>
-    <script>
-      const getInput = (id) => document.querySelector(`#${id}`).value;
-
-      const paragraph = document.querySelector("p");
-      const button = document.querySelector("button");
-
-      button.addEventListener("click", () => {
-        let borderColor = {
-          r: getInput("border-r"),
-          g: getInput("border-g"),
-          b: getInput("border-b"),
-        };
-        let borderWidth = getInput("border-width");
-        let backgroundColor = {
-          r: getInput("background-r"),
-          g: getInput("background-g"),
-          b: getInput("background-b"),
-        };
-
-        paragraph.style.borderColor = `rgb(${borderColor.r}, ${borderColor.g}, ${borderColor.b})`;
-        paragraph.style.borderWidth = `${borderWidth}px`;
-        paragraph.style.backgroundColor = `rgb(${backgroundColor.r}, ${backgroundColor.g}, ${backgroundColor.b})`;
-      });
-    </script>
 </html>
